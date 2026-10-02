@@ -1,0 +1,99 @@
+@startuml
+skinparam dpi 150
+skinparam defaultFontName "Arial"
+skinparam defaultFontSize 11
+skinparam roundCorner 6
+skinparam shadowing false
+
+skinparam package {
+    BackgroundColor #F8FAFC
+    BorderColor #64748B
+    BorderThickness 1.5
+    FontColor #0F172A
+    FontStyle bold
+    FontSize 12
+}
+
+skinparam component {
+    BackgroundColor #FFFFFF
+    BorderColor #2563EB
+    BorderThickness 1.5
+    FontColor #0F172A
+    FontSize 11
+    FontStyle bold
+    StereotypeFontColor #475569
+    StereotypeFontSize 10
+}
+
+skinparam interface {
+    BackgroundColor #FFFFFF
+    BorderColor #0284C7
+    BorderThickness 1.5
+    FontColor #0F172A
+    FontSize 10
+}
+
+skinparam arrow {
+    Color #334155
+    Thickness 1.2
+    FontColor #1E293B
+    FontSize 9
+}
+
+skinparam actor {
+    BackgroundColor #EFF6FF
+    BorderColor #1D4ED8
+    FontColor #0F172A
+    FontSize 10
+    FontStyle bold
+}
+
+title <size:16><b>Municipal Solid Waste Route Optimizer</b></size>\n<size:11><b>UML 2.0 Component Architecture Diagram (Microservices Pattern)</b></size>
+
+' Actors
+actor "Citizen" as Citizen
+actor "Truck\nDriver" as Driver
+actor "Sanitation\nSupervisor" as Supervisor
+actor "Smart Bins\n(Ultrasonic)" as IoTBins
+
+package "Presentation & Ingestion Tier" {
+    component "Web Portal / API Gateway" as APIGW <<component>>
+    component "Sensor Data Ingestion Service" as SensorIngest <<component>>
+}
+
+package "Core Processing Tier" {
+    component "Complaint Management Service" as ComplaintSvc <<component>>
+    component "Driver Manifest Service" as ManifestSvc <<component>>
+    component "Route Optimization Service" as RouteOptSvc <<component>>
+}
+
+package "Persistence Tier" {
+    component "Bin & Route Database" as DB <<component>>
+}
+
+' Actor connections
+Citizen -down-> APIGW : "HTTPS"
+Driver -down-> APIGW : "WebSocket"
+Supervisor -down-> APIGW : "HTTPS"
+IoTBins -down-> SensorIngest : "MQTT"
+
+' Tier alignment anchors (hidden)
+APIGW -[hidden]down-> ManifestSvc
+SensorIngest -[hidden]down-> RouteOptSvc
+ManifestSvc -[hidden]down-> DB
+
+' Assembly Connectors
+APIGW -(0- ManifestSvc : "Dispatch API\n(REST / WS)"
+ManifestSvc -(0- RouteOptSvc : "Route Request\n(gRPC / Protobuf)"
+APIGW -(0- ComplaintSvc : "Complaint API\n(REST / HTTPS)"
+
+SensorIngest -(0- DB : "Telemetry Batch API\n(SQL / JDBC)"
+RouteOptSvc -(0- DB : "Spatial Query API\n(PostGIS / SQL)"
+ComplaintSvc -(0- DB : "Ticket Storage API\n(SQL / JDBC)"
+
+' Data flow arrows
+ManifestSvc ..> RouteOptSvc : "<<use>> Trigger 45s Recalc"
+SensorIngest ..> DB : "<<use>> Persist >80% Full Bins"
+RouteOptSvc ..> DB : "<<use>> Read Bins & Graph"
+
+@enduml
