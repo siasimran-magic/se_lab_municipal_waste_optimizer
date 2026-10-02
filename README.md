@@ -3,7 +3,7 @@
 **Course**: Software Engineering  
 **Institution**: PES University  
 **Student SRN**: PES1UG24CS453  
-**Topic**: Component Modelling, Architectural Pattern Selection, SRS & WBS  
+**Topic**: Component Modelling, Architectural Pattern Selection, SRS, WBS & RTM  
 **GitHub Profile**: [siasimran-magic](https://github.com/siasimran-magic)  
 **Repository**: [se_lab_municipal_waste_optimizer](https://github.com/siasimran-magic/se_lab_municipal_waste_optimizer)
 
@@ -11,13 +11,14 @@
 
 ## Deliverables & Project Documents
 
-Direct links to all project documents and PDF deliverables:
+Direct links to all project documents and deliverables:
 
 | Document / Artifact | Format | Direct Repository Link |
 |---|---|---|
+| **Requirements Traceability Matrix (RTM)** | Microsoft Excel (`.xlsx`) | [RTM_PES1UG24CS453.xlsx](./RTM_PES1UG24CS453.xlsx) |
+| **Requirements Traceability Matrix (RTM)** | PDF Document | [RTM_PES1UG24CS453.pdf](./RTM_PES1UG24CS453.pdf) |
 | **Software Requirements Specification (SRS)** | IEEE 830 PDF | [SRS_PES1UG24CS453.pdf](./SRS_PES1UG24CS453.pdf) |
 | **Work Breakdown Structure (WBS)** | PDF Schedule | [WBS_PES1UG24CS453.pdf](./WBS_PES1UG24CS453.pdf) |
-| **Combined SRS & WBS** | Complete PDF | [SRS_AND_WBS_PES1UG24CS453.pdf](./SRS_AND_WBS_PES1UG24CS453.pdf) |
 | **Architecture Justification** | 1-Page PDF | [architecture_justification.pdf](./architecture_justification.pdf) |
 | **Component Architecture Diagram** | High-Res PNG | [component_diagram.png](./component_diagram.png) |
 | **Bug Tracker Report** | PDF Report | [BUGTRACKER_PES1UG24CS453.pdf](./BUGTRACKER_PES1UG24CS453.pdf) |
