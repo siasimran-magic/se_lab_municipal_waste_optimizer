@@ -1,24 +1,7 @@
-# Municipal Solid Waste Route Optimizer (SE Lab 3)
+# Municipal Solid Waste Route Optimizer (SE Lab 1 & 3)
 
-**Course**: Software Engineering  
-**Institution**: PES University  
-**Topic**: Component Modelling & Architectural Pattern Selection  
-**GitHub Profile**: [siasimran-magic](https://github.com/siasimran-magic)  
-**Repository**: [se_lab_municipal_waste_optimizer](https://github.com/siasimran-magic/se_lab_municipal_waste_optimizer)
 
----
 
-## Deliverables & Documents
-
-Direct links to all project artifacts and PDF deliverables:
-
-| Document / Artifact | Format | Direct Repository Link |
-|---|---|---|
-| **Component Diagram (PDF)** | Vector PDF | [component_diagram.pdf](./component_diagram.pdf) |
-| **Component Diagram (PNG)** | High-Res Image | [component_diagram.png](./component_diagram.png) |
-| **Architecture Justification (PDF)** | 1-Page PDF | [architecture_justification.pdf](./architecture_justification.pdf) |
-| **Architecture Justification (Word)** | DOCX | [architecture_justification.docx](./architecture_justification.docx) |
-| **Component Diagram Source** | PlantUML | [component_diagram.puml](./component_diagram.puml) |
 
 ---
 
